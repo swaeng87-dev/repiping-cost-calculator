@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Repiping Cost Calculator | Instant Real-Time Estimates</title>
+    <meta name="description" content="Calculate your house repiping cost in minutes. Free, instant estimates for PEX and Copper repiping tailored to your home size and location. Licensed & insured local pros.">
+    <meta name="keywords" content="house repiping cost calculator, repipe house cost, PEX repiping estimate, copper repiping cost, whole home plumbing replacement">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#1e293b',
+                            900: '#1e3a8a', // Primary Brand Navy
+                            950: '#0f172a'
+                        },
+                        orange: {
+                            500: '#f97316', // CTA Safety Orange
+                            600: '#ea580c'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .step-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-navy-950 text-gray-300 text-xs sm:text-sm py-2 px-4 text-center border-b border-navy-800 flex justify-between items-center max-w-full overflow-hidden">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-orange-500"></i>
+                <span>Licensed, Bonded & Insured Master Plumbers</span>
+            </span>
+            <div class="hidden md:flex items-center gap-6">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-orange-500"></i> 24/7 Emergency Service</span>
+                <a href="tel:18005557374" class="font-semibold text-white hover:text-orange-500 transition-colors"><i class="fa-solid fa-phone text-orange-500 mr-1"></i> (800) 555-REPIPE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY HEADER & NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white shadow-md border-b border-gray-100">
+        <div class="container mx-auto px-4 lg:px-8 py-3.5 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="bg-navy-900 text-white p-2.5 rounded-xl shadow-md">
+                    <i class="fa-solid fa-faucet-drip text-xl text-orange-500"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg sm:text-xl text-navy-900 block leading-tight tracking-tight">House Repiping</span>
+                    <span class="text-xs font-semibold text-gray-500 tracking-wider uppercase">Cost Calculator</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-gray-700">
+                <a href="#calculator" class="hover:text-navy-900 transition-colors">Calculator</a>
+                <a href="#services" class="hover:text-navy-900 transition-colors">Services</a>
+                <a href="#coverage" class="hover:text-navy-900 transition-colors">Service Areas</a>
+                <a href="#faq" class="hover:text-navy-900 transition-colors">FAQ</a>
+                <a href="#contact" class="hover:text-navy-900 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Header CTA -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="#calculator" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2.5 rounded-lg font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Calculate Now</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="lg:hidden text-gray-700 hover:text-navy-900 p-2 focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3">
+            <a href="#calculator" class="block py-2 text-gray-700 font-medium hover:text-navy-900">Calculator</a>
+            <a href="#services" class="block py-2 text-gray-700 font-medium hover:text-navy-900">Services</a>
+            <a href="#coverage" class="block py-2 text-gray-700 font-medium hover:text-navy-900">Service Areas</a>
+            <a href="#faq" class="block py-2 text-gray-700 font-medium hover:text-navy-900">FAQ</a>
+            <a href="#contact" class="block py-2 text-gray-700 font-medium hover:text-navy-900">Contact</a>
+            <a href="#calculator" class="block text-center bg-orange-500 text-white font-bold py-3 rounded-lg shadow mt-2">Get Instant Estimate</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH CALCULATOR CENTERPIECE -->
+    <section class="bg-gradient-to-b from-navy-950 via-navy-900 to-navy-800 text-white py-12 lg:py-16 relative overflow-hidden">
+        <!-- Background Pattern Overlay -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <!-- Hero Heading -->
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-orange-500/20 text-orange-400 border border-orange-500/30 mb-4">
+                    <i class="fa-solid fa-bolt"></i> 100% Free • Updated 2026 USA Pricing Engine
+                </span>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                    Free House Repiping Cost Calculator in Minutes
+                </h1>
+                <p class="mt-4 text-base sm:text-lg text-gray-300 font-normal leading-relaxed">
+                    Get accurate real-time replacement pricing tailored to your property size, layout, fixtures, and preferred piping materials.
+                </p>
+
+                <!-- Trust Badges Bar -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-6 border-t border-navy-800/80 text-xs sm:text-sm text-gray-300">
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-certificate text-orange-400"></i>
+                        <span>Licensed & Insured</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-award text-orange-400"></i>
+                        <span>25+ Years Exp.</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-shield text-orange-400"></i>
+                        <span>Lifetime Warranty</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-user-check text-orange-400"></i>
+                        <span>Authorized Partners</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE MULTI-STEP COST CALCULATOR CARD -->
+            <div id="calculator" class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl text-gray-800 overflow-hidden border border-gray-100">
+                
+                <!-- Calculator Header / Progress Bar -->
+                <div class="bg-gray-100 px-6 py-4 border-b border-gray-200">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-navy-900 uppercase tracking-wider" id="stepIndicatorText">Step 1 of 4: Property Details</span>
+                        <span class="text-xs font-semibold text-orange-600 bg-orange-100 px-2.5 py-0.5 rounded-full" id="progressPercentage">25% Completed</span>
+                    </div>
+                    <div class="w-full bg-gray-300 h-2 rounded-full overflow-hidden">
+                        <div id="progressBar" class="bg-orange-500 h-full w-1/4 transition-all duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Calculator Form Wrapper -->
+                <form id="repipeCalculatorForm" onsubmit="event.preventDefault();" class="p-6 sm:p-8">
+                    
+                    <!-- STEP 1: Property & Fixture Details -->
+                    <div id="calcStep1" class="step-transition">
+                        <div class="border-b border-gray-100 pb-4 mb-6">
+                            <h2 class="text-xl font-bold text-navy-900">Property & Layout Specifications</h2>
+                            <p class="text-xs text-gray-500 mt-1">This estimate provides whole-home potable pipe replacement logic for USA residences.</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Q1: Property Residence Type -->
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">1. Property Classification *</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <label class="cursor-pointer border-2 border-navy-900 bg-navy-50/30 rounded-xl p-3.5 flex items-center gap-3 hover:border-navy-900 transition-all option-card">
+                                        <input type="radio" name="residence_type" value="single" checked class="w-4 h-4 text-navy-900 focus:ring-navy-900">
+                                        <div>
+                                            <span class="font-semibold text-sm block text-navy-900">Single-Family Residence</span>
+                                            <span class="text-xs text-gray-500">Standard detached house / townhouse</span>
+                                        </div>
+                                    </label>
+                                    <label class="cursor-pointer border-2 border-gray-200 rounded-xl p-3.5 flex items-center gap-3 hover:border-navy-900 transition-all option-card">
+                                        <input type="radio" name="residence_type" value="multi" class="w-4 h-4 text-navy-900 focus:ring-navy-900">
+                                        <div>
+                                            <span class="font-semibold text-sm block text-navy-900">Multi-Family / Commercial</span>
+                                            <span class="text-xs text-gray-500">Duplex, apartment block, or business</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Q2 & Q3: ZIP Code & Square Footage & Stories -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label for="zipCode" class="block text-xs font-semibold text-gray-700 mb-1">ZIP Code *</label>
+                                    <input type="text" id="zipCode" placeholder="e.g. 80202" required maxlength="5" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 focus:border-navy-900 outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label for="sqft" class="block text-xs font-semibold text-gray-700 mb-1">Approx. Home Sq Footage *</label>
+                                    <input type="number" id="sqft" placeholder="e.g. 1800" value="1800" min="400" max="15000" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 focus:border-navy-900 outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label for="stories" class="block text-xs font-semibold text-gray-700 mb-1">Property Levels / Stories *</label>
+                                    <select id="stories" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 focus:border-navy-900 outline-none text-sm bg-white">
+                                        <option value="1">1 Story (Single Level)</option>
+                                        <option value="1_basement">1 Story + Basement</option>
+                                        <option value="2">2 Stories</option>
+                                        <option value="2_basement">2 Stories + Basement</option>
+                                        <option value="3">3+ Stories</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Foundation & Wall Type -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="foundation" class="block text-xs font-semibold text-gray-700 mb-1">Foundation Access Type *</label>
+                                    <select id="foundation" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 focus:border-navy-900 outline-none text-sm bg-white">
+                                        <option value="crawlspace">Crawlspace (Standard Access)</option>
+                                        <option value="basement">Full Basement (Unfinished/Easy)</option>
+                                        <option value="slab">Concrete Slab (Requires Overhead/Bypass)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="wallType" class="block text-xs font-semibold text-gray-700 mb-1">Primary Wall Type *</label>
+                                    <select id="wallType" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 focus:border-navy-900 outline-none text-sm bg-white">
+                                        <option value="drywall">Drywall / Sheetrock (Easiest)</option>
+                                        <option value="plaster">Plaster & Lath (Older Homes)</option>
+                                        <option value="tile">Tile / Masonry (Custom Work)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Fixture Counter Section -->
+                            <div class="pt-4 border-t border-gray-100">
+                                <h3 class="text-sm font-bold text-navy-900 mb-3">Count Your Water Outlets & Fixtures:</h3>
+                                
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                                    <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-200 text-center">
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Full Bathrooms</label>
+                                        <input type="number" id="fullBaths" value="2" min="1" max="10" class="w-full text-center font-bold py-1 border rounded border-gray-300 text-sm">
+                                    </div>
+                                    <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-200 text-center">
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Toilets</label>
+                                        <input type="number" id="toilets" value="2" min="1" max="12" class="w-full text-center font-bold py-1 border rounded border-gray-300 text-sm">
+                                    </div>
+                                    <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-200 text-center">
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Sinks (All)</label>
+                                        <input type="number" id="sinks" value="3" min="1" max="15" class="w-full text-center font-bold py-1 border rounded border-gray-300 text-sm">
+                                    </div>
+                                    <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-200 text-center">
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Tub/Shower Combos</label>
+                                        <input type="number" id="tubShowers" value="2" min="0" max="10" class="w-full text-center font-bold py-1 border rounded border-gray-300 text-sm">
+                                    </div>
+                                    <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-200 text-center">
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Standalone Tubs</label>
+                                        <input type="number" id="bathtubs" value="0" min="0" max="8" class="w-full text-center font-bold py-1 border rounded border-gray-300 text-sm">
+                                    </div>
+                                    <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-200 text-center">
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Washing Machine</label>
+                                        <input type="number" id="washers" value="1" min="0" max="4" class="w-full text-center font-bold py-1 border rounded border-gray-300 text-sm">
+                                    </div>
+                                    <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-200 text-center">
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Dishwasher / Ice</label>
+                                        <input type="number" id="kitchenApp" value="2" min="0" max="6" class="w-full text-center font-bold py-1 border rounded border-gray-300 text-sm">
+                                    </div>
+                                    <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-200 text-center">
+                                        <label class="block text-xs font-medium text-gray-600 mb-1">Hose Bibs (Outdoor)</label>
+                                        <input type="number" id="hoseBibs" value="2" min="0" max="10" class="w-full text-center font-bold py-1 border rounded border-gray-300 text-sm">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 1 Controls -->
+                        <div class="mt-8 pt-4 border-t border-gray-100 flex justify-end">
+                            <button type="button" onclick="goToStep(2)" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-lg shadow-md transition-all flex items-center gap-2">
+                                <span>Next: Select Piping Material</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Piping Material Selection -->
+                    <div id="calcStep2" class="hidden step-transition">
+                        <div class="border-b border-gray-100 pb-4 mb-6">
+                            <h2 class="text-xl font-bold text-navy-900">Select Pipe Material</h2>
+                            <p class="text-xs text-gray-500 mt-1">Choose the pipe type for your home overhaul.</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- PEX-A Card -->
+                            <label class="cursor-pointer border-2 border-navy-900 bg-navy-50/20 rounded-xl p-4 flex flex-col justify-between hover:shadow-md transition-all material-card">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <input type="radio" name="material" value="pex_a" checked class="w-4 h-4 text-navy-900 focus:ring-navy-900">
+                                            <span class="font-extrabold text-navy-900 text-base">PEX-A (Expansion)</span>
+                                        </div>
+                                        <span class="text-xs text-orange-600 font-bold bg-orange-100 px-2 py-0.5 rounded inline-block mt-1">Most Recommended</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-gray-600 bg-gray-200 px-2 py-1 rounded">Best Value</span>
+                                </div>
+                                <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                                    Highest flexibility, freeze-resistant, expansion fittings minimize leaks. Ideal for almost all USA single-family homes.
+                                </p>
+                            </label>
+
+                            <!-- PEX-B Card -->
+                            <label class="cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col justify-between hover:border-navy-900 hover:shadow-md transition-all material-card">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <input type="radio" name="material" value="pex_b" class="w-4 h-4 text-navy-900 focus:ring-navy-900">
+                                            <span class="font-extrabold text-navy-900 text-base">PEX-B (Crimp)</span>
+                                        </div>
+                                        <span class="text-xs text-gray-500 block mt-1">Budget Option</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-gray-600 bg-gray-100 px-2 py-1 rounded">Economy</span>
+                                </div>
+                                <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                                    Durable and reliable crimp system. Slightly lower material cost, slightly stiffer tubing.
+                                </p>
+                            </label>
+
+                            <!-- Copper Type L Card -->
+                            <label class="cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col justify-between hover:border-navy-900 hover:shadow-md transition-all material-card">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <input type="radio" name="material" value="copper" class="w-4 h-4 text-navy-900 focus:ring-navy-900">
+                                            <span class="font-extrabold text-navy-900 text-base">Copper (Type L/M)</span>
+                                        </div>
+                                        <span class="text-xs text-gray-500 block mt-1">Traditional Rigid Metal</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-navy-900 bg-navy-100 px-2 py-1 rounded">Premium</span>
+                                </div>
+                                <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                                    Proven 50+ year longevity, rigid metal lines, completely UV proof. Requires higher material & soldering labor costs.
+                                </p>
+                            </label>
+
+                            <!-- CPVC Card -->
+                            <label class="cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col justify-between hover:border-navy-900 hover:shadow-md transition-all material-card">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <input type="radio" name="material" value="cpvc" class="w-4 h-4 text-navy-900 focus:ring-navy-900">
+                                            <span class="font-extrabold text-navy-900 text-base">CPVC Tubing</span>
+                                        </div>
+                                        <span class="text-xs text-gray-500 block mt-1">Rigid Plastic Polymer</span>
+                                    </div>
+                                    <span class="text-xs font-bold text-gray-600 bg-gray-100 px-2 py-1 rounded">Alternative</span>
+                                </div>
+                                <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                                    Rigid plastic alternative to copper. Resistant to acidic water chemistry.
+                                </p>
+                            </label>
+                        </div>
+
+                        <!-- Step 2 Controls -->
+                        <div class="mt-8 pt-4 border-t border-gray-100 flex justify-between">
+                            <button type="button" onclick="goToStep(1)" class="text-gray-600 hover:text-navy-900 font-semibold px-4 py-2.5 rounded-lg border border-gray-300">
+                                <i class="fa-solid fa-arrow-left mr-1"></i> Back
+                            </button>
+                            <button type="button" onclick="calculateAndShowStep3()" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-lg shadow-md transition-all flex items-center gap-2">
+                                <span>Calculate Estimate</span>
+                                <i class="fa-solid fa-calculator"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: Results Display -->
+                    <div id="calcStep3" class="hidden step-transition">
+                        <div class="text-center py-4 border-b border-gray-100 mb-6">
+                            <span class="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full uppercase tracking-wider">Estimate Generated</span>
+                            <h2 class="text-2xl font-black text-navy-900 mt-2">Your Estimated House Repiping Cost Range</h2>
+                        </div>
+
+                        <!-- Estimated Price Banner -->
+                        <div class="bg-gradient-to-r from-navy-900 to-navy-800 text-white rounded-2xl p-6 sm:p-8 text-center shadow-xl relative my-4">
+                            <span class="text-xs uppercase font-semibold text-gray-300 tracking-wider">Estimated Total Investment</span>
+                            <div class="text-3xl sm:text-5xl font-black text-orange-400 my-2" id="estimatedPriceOutput">
+                                $4,850 - $6,400
+                            </div>
+                            <p class="text-xs text-gray-300 max-w-xl mx-auto">
+                                Includes complete labor, new pipe installation, fittings, water main shutoff connections, and code compliance checks.
+                            </p>
+                        </div>
+
+                        <!-- Breakdown Summary Card -->
+                        <div class="bg-gray-50 rounded-xl p-4 border border-gray-200 text-xs text-gray-600 space-y-2 mb-4">
+                            <div class="flex justify-between border-b border-gray-200 pb-1">
+                                <span>Selected Material:</span>
+                                <strong id="summaryMaterial" class="text-navy-900">PEX-A (Expansion)</strong>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-200 pb-1">
+                                <span>Estimated Outlets & Fixtures:</span>
+                                <strong id="summaryFixtures" class="text-navy-900">15 Outlets</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Property Layout Factor:</span>
+                                <strong id="summaryLayout" class="text-navy-900">Standard Access</strong>
+                            </div>
+                        </div>
+
+                        <!-- Mandatory Disclaimer -->
+                        <p class="text-xs text-gray-500 italic text-center mb-6">
+                            * Disclaimer: This is an automated preliminary estimate. Actual turnkey quote may vary based on mandatory local municipal permits, exact wall access conditions, and site plumbing inspection.
+                        </p>
+
+                        <!-- Step 3 Controls -->
+                        <div class="pt-2 flex justify-between items-center">
+                            <button type="button" onclick="goToStep(2)" class="text-gray-600 hover:text-navy-900 font-semibold px-4 py-2.5 rounded-lg border border-gray-300 text-sm">
+                                <i class="fa-solid fa-arrow-left mr-1"></i> Edit Specs
+                            </button>
+                            <button type="button" onclick="goToStep(4)" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-lg shadow-md transition-all flex items-center gap-2 text-base">
+                                <span>Lock In Price & Get Detailed Quote</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4: Lead Capture Form -->
+                    <div id="calcStep4" class="hidden step-transition">
+                        <div class="border-b border-gray-100 pb-4 mb-6 text-center">
+                            <h2 class="text-xl font-bold text-navy-900">Where Should We Send Your Detailed Breakdown & $250 Off Voucher?</h2>
+                            <p class="text-xs text-gray-500 mt-1">Connect with licensed local repiping specialists in your area.</p>
+                        </div>
+
+                        <div class="space-y-4 max-w-xl mx-auto">
+                            <div>
+                                <label for="leadName" class="block text-xs font-semibold text-gray-700 mb-1">Full Name *</label>
+                                <input type="text" id="leadName" required placeholder="John Doe" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 focus:border-navy-900 outline-none text-sm">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="leadEmail" class="block text-xs font-semibold text-gray-700 mb-1">Email Address *</label>
+                                    <input type="email" id="leadEmail" required placeholder="john@example.com" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 focus:border-navy-900 outline-none text-sm">
+                                </div>
+                                <div>
+                                    <label for="leadPhone" class="block text-xs font-semibold text-gray-700 mb-1">Phone Number *</label>
+                                    <input type="tel" id="leadPhone" required placeholder="(555) 000-0000" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 focus:border-navy-900 outline-none text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="leadAddress" class="block text-xs font-semibold text-gray-700 mb-1">Street Address / City *</label>
+                                <input type="text" id="leadAddress" required placeholder="123 Maple Street, Denver, CO" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 focus:border-navy-900 outline-none text-sm">
+                            </div>
+
+                            <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 text-xs text-gray-600 flex items-start gap-2.5">
+                                <i class="fa-solid fa-lock text-emerald-600 text-base mt-0.5"></i>
+                                <span>We respect your privacy. Your information is encrypted and sent directly to our local verified lead system (<span class="font-mono text-navy-900">swarupm@zohomail.com</span> placeholder). No spam.</span>
+                            </div>
+
+                            <button type="submit" id="submitLeadBtn" onclick="handleLeadSubmit()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-extrabold py-4 rounded-xl shadow-lg transition-all text-base tracking-wide flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>GET DETAILED QUOTE NOW</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US / VALUE PROPOSITION GRID -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900">Why Homeowners Trust Our Repiping Network</h2>
+                <p class="text-gray-600 text-sm mt-2">Replacing old galvanized or leaky polybutylene pipes protects your property value and water purity.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-navy-900 text-orange-500 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Transparent Pricing</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">No surprise line items. Clear upfront estimates calculated on real pipe footage and hardware needs.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-navy-900 text-orange-500 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">1–3 Day Completion</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Most single-family homes are completed in 24 to 72 hours, minimizing water downtime for your family.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-navy-900 text-orange-500 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Minimal Disruption</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Precision drywall patching and clean drop-cloth protection keep your home spotless during installation.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-navy-900 text-orange-500 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Master Local Experts</h3>
+                    <p class="text-xs text-gray-600 leading-relaxed">Fully licensed, background-checked plumbers backed by lifetime pipe material guarantees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES PAGE SECTION -->
+    <section id="services" class="py-16 bg-gray-50 border-t border-b border-gray-200">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Full Plumbing Solutions</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">Our Core Residential Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-faucet text-3xl text-navy-900 mb-3"></i>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Whole-House Repiping</h3>
+                    <p class="text-xs text-gray-600 mb-4 leading-relaxed">Complete removal or bypass of old pinhole-prone galvanized steel, polybutylene, or corroded copper lines with new PEX or L-Type Copper.</p>
+                    <a href="#calculator" class="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1">Calculate Repipe Cost <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-water text-3xl text-navy-900 mb-3"></i>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Drain Cleaning & Hydro-Jetting</h3>
+                    <p class="text-xs text-gray-600 mb-4 leading-relaxed">High-pressure water jetting and motorized drain clearing to remove stubborn tree roots, scale buildup, and heavy main sewer blockages.</p>
+                    <a href="#contact" class="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1">Book Inspection <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-fire-burner text-3xl text-navy-900 mb-3"></i>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Water Heater Replacement</h3>
+                    <p class="text-xs text-gray-600 mb-4 leading-relaxed">Tankless and traditional tank water heater installations perfectly integrated with your newly updated supply lines for maximum flow.</p>
+                    <a href="#contact" class="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1">Get Water Heater Quote <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-shower text-3xl text-navy-900 mb-3"></i>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Fixture & Valve Upgrades</h3>
+                    <p class="text-xs text-gray-600 mb-4 leading-relaxed">Installation of new pressure-balancing shower valves, shutoff quarter-turn angle stops, and modern low-flow fixtures.</p>
+                    <a href="#contact" class="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-magnifying-glass-chart text-3xl text-navy-900 mb-3"></i>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Plumbing Inspections</h3>
+                    <p class="text-xs text-gray-600 mb-4 leading-relaxed">Comprehensive digital camera inspections and water pressure tests to detect hidden slab leaks and pipe wall degradation.</p>
+                    <a href="#contact" class="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1">Schedule Diagnostic <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-house-crack text-3xl text-navy-900 mb-3"></i>
+                    <h3 class="text-lg font-bold text-navy-900 mb-2">Slab Leak Repairs</h3>
+                    <p class="text-xs text-gray-600 mb-4 leading-relaxed">Non-destructive slab leak bypass and overhead repiping solutions designed to preserve concrete floors and foundations.</p>
+                    <a href="#contact" class="text-xs font-bold text-orange-600 hover:text-orange-700 flex items-center gap-1">Emergency Service <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE AREAS SECTION -->
+    <section id="coverage" class="py-16 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Service Coverage</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">Nationwide Local Partner Coverage</h2>
+                <p class="text-xs text-gray-600 mt-2">We partner with top-rated licensed plumbing contractors across major US metro hubs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-xs">
+                <!-- West Coast -->
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <h3 class="font-bold text-navy-900 text-sm mb-2 border-b border-gray-200 pb-1">West Coast</h3>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>Los Angeles, CA</li>
+                        <li>San Diego, CA</li>
+                        <li>San Jose, CA</li>
+                        <li>Seattle, WA</li>
+                        <li>Portland, OR</li>
+                    </ul>
+                </div>
+
+                <!-- Southwest -->
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <h3 class="font-bold text-navy-900 text-sm mb-2 border-b border-gray-200 pb-1">Southwest</h3>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>Phoenix, AZ</li>
+                        <li>Denver, CO</li>
+                        <li>Las Vegas, NV</li>
+                        <li>Salt Lake City, UT</li>
+                        <li>Albuquerque, NM</li>
+                    </ul>
+                </div>
+
+                <!-- South -->
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <h3 class="font-bold text-navy-900 text-sm mb-2 border-b border-gray-200 pb-1">South & Sunbelt</h3>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>Dallas-Ft. Worth, TX</li>
+                        <li>Houston, TX</li>
+                        <li>Atlanta, GA</li>
+                        <li>Tampa / Orlando, FL</li>
+                        <li>Charlotte, NC</li>
+                    </ul>
+                </div>
+
+                <!-- Midwest -->
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <h3 class="font-bold text-navy-900 text-sm mb-2 border-b border-gray-200 pb-1">Midwest</h3>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>Chicago, IL</li>
+                        <li>Columbus, OH</li>
+                        <li>Indianapolis, IN</li>
+                        <li>Minneapolis, MN</li>
+                        <li>Kansas City, MO</li>
+                    </ul>
+                </div>
+
+                <!-- Northeast -->
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200">
+                    <h3 class="font-bold text-navy-900 text-sm mb-2 border-b border-gray-200 pb-1">Northeast</h3>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>Philadelphia, PA</li>
+                        <li>Boston, MA</li>
+                        <li>New York Metro, NY</li>
+                        <li>Baltimore, MD</li>
+                        <li>Pittsburgh, PA</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center bg-navy-50 p-4 rounded-xl border border-navy-100 max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+                <span class="text-xs text-navy-900 font-semibold">Don't see your city listed? We cover over 850+ US postal regions.</span>
+                <a href="#contact" class="bg-navy-900 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-navy-950 transition-colors whitespace-nowrap">Check Availability</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-4 lg:px-8 max-w-3xl">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Questions & Answers</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-navy-900 mt-1">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-3" id="faqAccordion">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button type="button" class="faq-btn w-full px-5 py-4 text-left font-bold text-navy-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+                        <span>How much does it typically cost to repipe a whole house?</span>
+                        <i class="fa-solid fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-4 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-2">
+                        In the United States, whole-house repiping costs typically range between $4,000 and $12,000+. Factors include home square footage, number of stories, number of fixtures/bathrooms, and whether you select PEX or Copper piping.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button type="button" class="faq-btn w-full px-5 py-4 text-left font-bold text-navy-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+                        <span>What is the best pipe material: PEX or Copper?</span>
+                        <i class="fa-solid fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-4 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-2">
+                        PEX (especially PEX-A) is currently preferred by over 80% of homeowners due to its lower material cost, flexibility, scale resistance, and freeze tolerance. Copper is highly durable and proven over decades, but carries higher material and labor costs.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button type="button" class="faq-btn w-full px-5 py-4 text-left font-bold text-navy-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+                        <span>How long does the whole repiping process take?</span>
+                        <i class="fa-solid fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-4 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-2">
+                        Most single-family home repipes are completed in 1 to 3 days. Water supply is typically turned back on at the end of each workday so your family remains comfortable.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button type="button" class="faq-btn w-full px-5 py-4 text-left font-bold text-navy-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+                        <span>Will my walls and drywall be damaged?</span>
+                        <i class="fa-solid fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-4 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-2">
+                        Technicians make small, strategic access cuts in drywall to feed new lines. Professional repiping packages usually include complete drywall patching, texturing, and clean-up.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <button type="button" class="faq-btn w-full px-5 py-4 text-left font-bold text-navy-900 flex justify-between items-center text-sm sm:text-base focus:outline-none">
+                        <span>Are municipal permits required for repiping?</span>
+                        <i class="fa-solid fa-chevron-down text-orange-500 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-4 text-xs sm:text-sm text-gray-600 leading-relaxed border-t border-gray-100 pt-2">
+                        Yes. Authorized local plumbing partners pull required city or county building permits and arrange city safety inspections upon project completion.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Get In Touch</span>
+                    <h2 class="text-3xl font-black text-navy-900 mt-1 mb-4">Have Questions or Need an Immediate Inspection?</h2>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                        Fill out the inquiry form or call our support dispatch line. Our friendly staff is available to clarify estimates or dispatch local certified plumbers.
+                    </p>
+
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-navy-100 text-navy-900 rounded-lg flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-clock text-base"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-navy-900">Standard Business Hours</strong>
+                                <span class="text-gray-600">Monday – Friday: 7:00 AM – 6:00 PM EST</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-phone-volume text-base"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-navy-900">Emergency & Weekend Line</strong>
+                                <span class="text-gray-600">Available 24 Hours / 7 Days a Week</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-envelope text-base"></i>
+                            </div>
+                            <div>
+                                <strong class="block text-navy-900">Direct Email Dispatch</strong>
+                                <span class="text-gray-600 font-mono">swarupm@zohomail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <h3 class="text-lg font-bold text-navy-900 mb-4">Send Us a Direct Message</h3>
+                    
+                    <form onsubmit="event.preventDefault(); handleContactSubmit();" class="space-y-4">
+                        <div>
+                            <label for="contactName" class="block text-xs font-semibold text-gray-700 mb-1">Your Name *</label>
+                            <input type="text" id="contactName" required placeholder="Jane Smith" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 outline-none text-sm bg-white">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="contactEmail" class="block text-xs font-semibold text-gray-700 mb-1">Email *</label>
+                                <input type="email" id="contactEmail" required placeholder="jane@example.com" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 outline-none text-sm bg-white">
+                            </div>
+                            <div>
+                                <label for="contactPhone" class="block text-xs font-semibold text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" id="contactPhone" placeholder="(555) 000-0000" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 outline-none text-sm bg-white">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="contactMsg" class="block text-xs font-semibold text-gray-700 mb-1">How Can We Help You?</label>
+                            <textarea id="contactMsg" rows="3" placeholder="Tell us about your low pressure, leaks, or repiping questions..." class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 outline-none text-sm bg-white"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-navy-900 hover:bg-navy-950 text-white font-bold py-3 rounded-lg shadow transition-colors text-sm">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-gray-400 py-12 border-t border-navy-900 text-xs">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-navy-900">
+                <div>
+                    <a href="#" class="flex items-center gap-2 text-white font-bold text-lg mb-3">
+                        <i class="fa-solid fa-faucet-drip text-orange-500"></i>
+                        <span>Repiping Cost Calculator</span>
+                    </a>
+                    <p class="text-gray-400 leading-relaxed mb-3">
+                        Connecting homeowners across the USA with transparent, instant repiping estimate tools and licensed master plumbers.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Quick Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#calculator" class="hover:text-white transition-colors">Instant Calculator</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">PEX & Copper Services</a></li>
+                        <li><a href="#coverage" class="hover:text-white transition-colors">Coverage Areas</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">Repiping FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Supported Materials</h4>
+                    <ul class="space-y-2">
+                        <li><span>PEX-A Expansion Piping</span></li>
+                        <li><span>PEX-B Crimp Plumbing</span></li>
+                        <li><span>Type L / M Copper Lines</span></li>
+                        <li><span>CPVC Tubing Systems</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Contact Placeholder</h4>
+                    <p class="text-gray-400 mb-2">Lead Submission Email:</p>
+                    <p class="text-white font-mono bg-navy-900 p-2 rounded border border-navy-800 text-[11px] inline-block">swarupm@zohomail.com</p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500">
+                <p>&copy; 2026 House Repiping Cost Calculator. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300">Terms of Service</a>
+                    <a href="#" class="hover:text-gray-300">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Navigation Menu Toggle
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ Accordion Toggle
+        document.querySelectorAll('.faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Multi-Step Form Logic & Calculation Engine
+        let currentStep = 1;
+
+        function updateProgressBar(step) {
+            const progressBar = document.getElementById('progressBar');
+            const stepText = document.getElementById('stepIndicatorText');
+            const progressPercentage = document.getElementById('progressPercentage');
+
+            const stepNames = [
+                "Step 1 of 4: Property Details",
+                "Step 2 of 4: Select Pipe Material",
+                "Step 3 of 4: Estimate Results",
+                "Step 4 of 4: Request Detailed Breakdown"
+            ];
+
+            const percentages = [25, 50, 75, 100];
+
+            stepText.innerText = stepNames[step - 1];
+            progressPercentage.innerText = `${percentages[step - 1]}% Completed`;
+            progressBar.style.width = `${percentages[step - 1]}%`;
+        }
+
+        function goToStep(stepNumber) {
+            // Validate Step 1 before proceeding
+            if (currentStep === 1 && stepNumber === 2) {
+                const zip = document.getElementById('zipCode').value;
+                if (!zip || zip.length < 5) {
+                    alert('Please enter a valid 5-digit US ZIP Code to proceed.');
+                    document.getElementById('zipCode').focus();
+                    return;
+                }
+            }
+
+            // Hide all steps
+            document.getElementById('calcStep1').classList.add('hidden');
+            document.getElementById('calcStep2').classList.add('hidden');
+            document.getElementById('calcStep3').classList.add('hidden');
+            document.getElementById('calcStep4').classList.add('hidden');
+
+            // Show target step
+            document.getElementById(`calcStep${stepNumber}`).classList.remove('hidden');
+            currentStep = stepNumber;
+            updateProgressBar(stepNumber);
+
+            // Scroll smoothly to top of calculator
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function calculateAndShowStep3() {
+            // Retrieve User Inputs
+            const sqft = parseFloat(document.getElementById('sqft').value) || 1800;
+            const stories = document.getElementById('stories').value;
+            const foundation = document.getElementById('foundation').value;
+            const wallType = document.getElementById('wallType').value;
+
+            // Fixtures Count
+            const fullBaths = parseInt(document.getElementById('fullBaths').value) || 0;
+            const toilets = parseInt(document.getElementById('toilets').value) || 0;
+            const sinks = parseInt(document.getElementById('sinks').value) || 0;
+            const tubShowers = parseInt(document.getElementById('tubShowers').value) || 0;
+            const bathtubs = parseInt(document.getElementById('bathtubs').value) || 0;
+            const washers = parseInt(document.getElementById('washers').value) || 0;
+            const kitchenApp = parseInt(document.getElementById('kitchenApp').value) || 0;
+            const hoseBibs = parseInt(document.getElementById('hoseBibs').value) || 0;
+
+            const totalFixtures = fullBaths + toilets + sinks + tubShowers + bathtubs + washers + kitchenApp + hoseBibs;
+
+            // Material Choice
+            const selectedMaterial = document.querySelector('input[name="material"]:checked').value;
+
+            // Calculation Logic
+            // Base cost per sqft ($1.50 - $2.20) + per fixture cost ($220 - $350)
+            let baseLow = (sqft * 1.5) + (totalFixtures * 220);
+            let baseHigh = (sqft * 2.2) + (totalFixtures * 320);
+
+            // Material Multiplier
+            let materialMultiplier = 1.0;
+            let materialLabel = "PEX-A (Expansion)";
+
+            if (selectedMaterial === 'pex_b') {
+                materialMultiplier = 0.90;
+                materialLabel = "PEX-B (Crimp)";
+            } else if (selectedMaterial === 'pex_a') {
+                materialMultiplier = 1.0;
+                materialLabel = "PEX-A (Expansion)";
+            } else if (selectedMaterial === 'cpvc') {
+                materialMultiplier = 1.05;
+                materialLabel = "CPVC Tubing";
+            } else if (selectedMaterial === 'copper') {
+                materialMultiplier = 1.65;
+                materialLabel = "Copper (Type L/M)";
+            }
+
+            // Foundation Multiplier
+            let foundationMultiplier = 1.0;
+            if (foundation === 'slab') foundationMultiplier = 1.25; // Overhead routing
+            if (foundation === 'basement') foundationMultiplier = 0.95;
+
+            // Story Multiplier
+            let storyMultiplier = 1.0;
+            if (stories === '2' || stories === '1_basement') storyMultiplier = 1.15;
+            if (stories === '2_basement' || stories === '3') storyMultiplier = 1.30;
+
+            // Final Calculation
+            let totalLow = Math.round((baseLow * materialMultiplier * foundationMultiplier * storyMultiplier) / 50) * 50;
+            let totalHigh = Math.round((baseHigh * materialMultiplier * foundationMultiplier * storyMultiplier) / 50) * 50;
+
+            // Floor minimum realistic price
+            if (totalLow < 2800) totalLow = 2800;
+            if (totalHigh < 3800) totalHigh = 3800;
+
+            // Render Results
+            document.getElementById('estimatedPriceOutput').innerText = `$${totalLow.toLocaleString()} - $${totalHigh.toLocaleString()}`;
+            document.getElementById('summaryMaterial').innerText = materialLabel;
+            document.getElementById('summaryFixtures').innerText = `${totalFixtures} Total Fixtures/Outlets`;
+            document.getElementById('summaryLayout').innerText = `${sqft} sq ft, ${stories.replace('_', ' + ')} level`;
+
+            // Transition to Step 3
+            goToStep(3);
+        }
+
+        function handleLeadSubmit() {
+            const name = document.getElementById('leadName').value;
+            const email = document.getElementById('leadEmail').value;
+            const phone = document.getElementById('leadPhone').value;
+            const address = document.getElementById('leadAddress').value;
+
+            if (!name || !email || !phone || !address) {
+                alert('Please fill in all contact fields to receive your official estimate summary.');
+                return;
+            }
+
+            const estimateText = document.getElementById('estimatedPriceOutput').innerText;
+
+            // Lead Capture Simulation Notice
+            alert(`Thank you, ${name}!\n\nYour repiping estimate of ${estimateText} has been locked in.\n\nA confirmation notification has been dispatched to swarupm@zohomail.com.\n\nOur certified local master plumber will reach out to schedule your free on-site verification.`);
+
+            // Reset Form or Redirect
+            goToStep(1);
+            document.getElementById('repipeCalculatorForm').reset();
+        }
+
+        function handleContactSubmit() {
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+
+            if (!name || !email) {
+                alert('Please provide your name and email address.');
+                return;
+            }
+
+            alert(`Thank you ${name}, your message has been sent to swarupm@zohomail.com. Our team will contact you shortly!`);
+        }
+    </script>
+</body>
+</html>
