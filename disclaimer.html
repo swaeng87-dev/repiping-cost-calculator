@@ -1,61 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disclaimer | House Repiping Cost Calculator</title>
-    <meta name="description" content="Pricing and service disclaimer for House Repiping Cost Calculator estimates.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <meta name="description" content="Disclaimer for the House Repiping Cost Calculator website and estimate tool.">
 
-    <!-- Header -->
-    <header class="bg-slate-900 text-white py-6">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="font-extrabold text-lg flex items-center gap-2">
-                <i class="fa-solid fa-faucet-drip text-orange-500"></i> House Repiping Cost Calculator
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 800: '#1e293b', 900: '#1e3a8a', 950: '#0f172a' },
+                        orange: { 500: '#f97316', 600: '#ea580c' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-navy-950 text-gray-300 text-xs sm:text-sm py-2 px-4 text-center border-b border-navy-800 flex justify-between items-center max-w-full overflow-hidden">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-orange-500"></i>
+                <span>Licensed, Bonded & Insured Master Plumbers</span>
+            </span>
+            <div class="hidden md:flex items-center gap-6">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-orange-500"></i> 24/7 Emergency Service</span>
+                <a href="tel:18005557374" class="font-semibold text-white hover:text-orange-500 transition-colors"><i class="fa-solid fa-phone text-orange-500 mr-1"></i> (800) 555-REPIPE</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STICKY HEADER & NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white shadow-md border-b border-gray-100">
+        <div class="container mx-auto px-4 lg:px-8 py-3.5 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="bg-navy-900 text-white p-2.5 rounded-xl shadow-md">
+                    <i class="fa-solid fa-faucet-drip text-xl text-orange-500"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg sm:text-xl text-navy-900 block leading-tight tracking-tight">House Repiping</span>
+                    <span class="text-xs font-semibold text-gray-500 tracking-wider uppercase">Cost Calculator</span>
+                </div>
             </a>
-            <a href="index.html" class="text-xs text-gray-300 hover:text-white"><i class="fa-solid fa-arrow-left mr-1"></i> Back to Home</a>
+
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-gray-700">
+                <a href="index.html#calculator" class="hover:text-navy-900 transition-colors">Calculator</a>
+                <a href="index.html#services" class="hover:text-navy-900 transition-colors">Services</a>
+                <a href="index.html#coverage" class="hover:text-navy-900 transition-colors">Service Areas</a>
+                <a href="index.html#faq" class="hover:text-navy-900 transition-colors">FAQ</a>
+                <a href="index.html#contact" class="hover:text-navy-900 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="index.html#calculator" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2.5 rounded-lg font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Calculate Now</span>
+                </a>
+            </div>
+
+            <button id="mobileMenuBtn" class="lg:hidden text-gray-700 hover:text-navy-900 p-2 focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3">
+            <a href="index.html#calculator" class="block py-2 text-gray-700 font-medium hover:text-navy-900">Calculator</a>
+            <a href="index.html#services" class="block py-2 text-gray-700 font-medium hover:text-navy-900">Services</a>
+            <a href="index.html#coverage" class="block py-2 text-gray-700 font-medium hover:text-navy-900">Service Areas</a>
+            <a href="index.html#faq" class="block py-2 text-gray-700 font-medium hover:text-navy-900">FAQ</a>
+            <a href="index.html#contact" class="block py-2 text-gray-700 font-medium hover:text-navy-900">Contact</a>
         </div>
     </header>
 
-    <!-- Content -->
-    <main class="container mx-auto px-4 py-12 max-w-4xl bg-white my-8 rounded-2xl shadow-sm border border-gray-200">
-        <h1 class="text-3xl font-black text-slate-900 mb-2">Pricing Disclaimer</h1>
-        <p class="text-xs text-gray-500 mb-8">Last Updated: July 2026</p>
-
-        <div class="space-y-6 text-sm text-gray-600 leading-relaxed">
-            <section class="bg-orange-50 p-6 rounded-xl border border-orange-200">
-                <h2 class="text-lg font-bold text-slate-900 mb-2">Important Notice Regarding Estimates</h2>
-                <p class="text-slate-800 font-medium">
-                    All cost figures, ranges, and estimates generated by the House Repiping Cost Calculator are for informational and preliminary budgeting purposes only. They do not constitute a binding legal contract or guaranteed service quote.
-                </p>
-            </section>
-
-            <section>
-                <h2 class="text-lg font-bold text-slate-900 mb-2">Factors That Affect Final Pricing</h2>
-                <p>Actual turnkey quotes provided by licensed local plumbing partners may vary based on:</p>
-                <ul class="list-disc pl-5 mt-2 space-y-1">
-                    <li>Concealed structural impediments, pipe decay, or asbestos/lead mitigation requirements.</li>
-                    <li>Local municipal building permit fees and mandatory code compliance inspections.</li>
-                    <li>Accessibility of crawlspaces, concrete slab bypass complexity, or multi-story vertical wall runs.</li>
-                    <li>Specialized drywall texture matching, custom tile repair, or cabinetry modifications.</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2 class="text-lg font-bold text-slate-900 mb-2">No Professional Plumbing Guarantee</h2>
-                <p>
-                    House Repiping Cost Calculator is a matching and pricing reference tool. We do not provide direct engineering or plumbing services. Homeowners must verify contractor licenses, bonding, insurance, and formal written bids before authorizing any physical home renovations.
-                </p>
-            </section>
+    <!-- PAGE BANNER -->
+    <section class="bg-gradient-to-b from-navy-950 via-navy-900 to-navy-800 text-white py-14">
+        <div class="container mx-auto px-4 lg:px-8 text-center max-w-2xl">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-orange-500/20 text-orange-400 border border-orange-500/30 mb-4">
+                <i class="fa-solid fa-circle-exclamation"></i> Important Notice
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">Disclaimer</h1>
+            <p class="mt-3 text-sm text-gray-300">Last Updated: July 30, 2026</p>
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-gray-400 py-8 text-center text-xs">
-        <p>&copy; 2026 House Repiping Cost Calculator. All rights reserved.</p>
+    <!-- MAIN CONTENT -->
+    <section class="py-14 bg-white">
+ 
+            <div class="space-y-10 text-sm sm:text-base text-gray-700 leading-relaxed">
+
+                <div>
+                    <p>
+                        The information provided by House Repiping Cost Calculator ("we," "us," or "our") on this website and through our estimate tool (the "Service") is for general informational and planning purposes only. By accessing or using the Service, you acknowledge and agree to the disclaimers set forth below.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-orange-500"></i> 1. Estimates Are Not Quotes
+                    </h2>
+                    <p>
+                        All cost estimates, price ranges, and figures generated by the calculator are preliminary, non-binding, and provided "as is." They do not constitute a guaranteed quote, fixed-price offer, or contractual agreement for plumbing or repiping services. Actual project costs will depend on a professional, in-person inspection of your property, local building codes, permit fees, material availability, labor rates in your area, and unforeseen site conditions.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation text-orange-500"></i> 2. No Professional Advice
+                    </h2>
+                    <p>
+                        Nothing on this website should be construed as professional plumbing, engineering, legal, or financial advice. The content is not a substitute for an on-site evaluation by a licensed master plumber or qualified contractor. Always consult a licensed professional before making decisions about repiping, plumbing repairs, or home improvement projects.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-user-shield text-orange-500"></i> 3. Contractor Referrals & Third-Party Services
+                    </h2>
+                    <p>
+                        Where applicable, we may refer you to independent, third-party licensed plumbing contractors ("Service Providers") to perform repiping or related work. We do not employ these contractors, nor do we control their pricing, scheduling, workmanship, or warranty practices. Any contract for services is entered into directly between you and the Service Provider. We make reasonable efforts to partner with reputable, licensed professionals, but we cannot guarantee the quality, timeliness, or outcome of any work performed by a third party.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line text-orange-500"></i> 4. Accuracy of Information
+                    </h2>
+                    <p>
+                        While we strive to keep the information on this website accurate and up to date, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the website, the calculator, or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is strictly at your own risk.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-link text-orange-500"></i> 5. External Links
+                    </h2>
+                    <p>
+                        This website may contain links to external websites that are not provided or maintained by us. We do not guarantee the accuracy, relevance, timeliness, or completeness of any information on these external websites. The inclusion of any links does not necessarily imply a recommendation or endorsement of the views expressed within them.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-bug text-orange-500"></i> 6. Technical Issues
+                    </h2>
+                    <p>
+                        We do not warrant that the website or the calculator will be uninterrupted, timely, secure, or error-free. We will not be liable if for any reason the Service is unavailable at any time or for any period. You acknowledge that your use of the Service is at your sole risk.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-gavel text-orange-500"></i> 7. Limitation of Liability
+                    </h2>
+                    <p>
+                        In no event shall House Repiping Cost Calculator, its owners, affiliates, partners, or employees be liable for any loss or damage, including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website, the calculator, or reliance on any estimate provided.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-orange-500"></i> 8. Changes to This Disclaimer
+                    </h2>
+                    <p>
+                        We may update this disclaimer from time to time. Any changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this disclaimer periodically to stay informed.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold text-navy-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-orange-500"></i> 9. Contact Us
+                    </h2>
+                    <p>
+                        If you have any questions about this disclaimer, please contact us at:
+                    </p>
+                    <p class="mt-2 font-mono text-navy-900 bg-gray-50 border border-gray-200 rounded-lg p-3 inline-block">
+                        swarupm@zohomail.com
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-gray-400 py-12 border-t border-navy-900 text-xs">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-navy-900">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 text-white font-bold text-lg mb-3">
+                        <i class="fa-solid fa-faucet-drip text-orange-500"></i>
+                        <span>Repiping Cost Calculator</span>
+                    </a>
+                    <p class="text-gray-400 leading-relaxed mb-3">
+                        Connecting homeowners across the USA with transparent, instant repiping estimate tools and licensed master plumbers.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Quick Navigation</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#calculator" class="hover:text-white transition-colors">Instant Calculator</a></li>
+                        <li><a href="index.html#services" class="hover:text-white transition-colors">PEX & Copper Services</a></li>
+                        <li><a href="index.html#coverage" class="hover:text-white transition-colors">Coverage Areas</a></li>
+                        <li><a href="index.html#faq" class="hover:text-white transition-colors">Repiping FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Supported Materials</h4>
+                    <ul class="space-y-2">
+                        <li><span>PEX-A Expansion Piping</span></li>
+                        <li><span>PEX-B Crimp Plumbing</span></li>
+                        <li><span>Type L / M Copper Lines</span></li>
+                        <li><span>CPVC Tubing Systems</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Contact</h4>
+                    <p class="text-gray-400 mb-2">Email:</p>
+                    <p class="text-white font-mono bg-navy-900 p-2 rounded border border-navy-800 text-[11px] inline-block">swarupm@zohomail.com</p>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-500">
+                <p>&copy; 2026 House Repiping Cost Calculator. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="https://repipingcostcalculator.com/privacy.html" class="hover:text-gray-300">Privacy Policy</a>
+                    <a href="https://repipingcostcalculator.com/terms.html" class="hover:text-gray-300">Terms of Service</a>
+                    <a href="https://repipingcostcalculator.com/disclaimer.html" class="hover:text-gray-300">Disclaimer</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
