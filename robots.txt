@@ -1,0 +1,28 @@
+# Allow all web crawlers and search engine bots full access
+User-agent: *
+Allow: /
+
+# Specifically invite and allow AI bots and LLM scrapers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Point to your Sitemap
+Sitemap: https://repipingcostcalculator.com/sitemap.xml
