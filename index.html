@@ -464,6 +464,8 @@
                                 <i class="fa-solid fa-lock text-emerald-600 text-base mt-0.5"></i>
                                 <span>We respect your privacy. Your information is encrypted and sent directly to our local verified lead system (<span class="font-mono text-navy-900">repipingcost@gmail.com</span> placeholder). No spam.</span>
                             </div>
+                            <!-- Web3Forms Spam Protection -->
+                               <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
                             <button type="submit" id="submitLeadBtn" onclick="handleLeadSubmit()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-extrabold py-4 rounded-xl shadow-lg transition-all text-base tracking-wide flex items-center justify-center gap-2">
                                 <i class="fa-solid fa-paper-plane"></i>
@@ -799,6 +801,8 @@
                             <label for="contactMsg" class="block text-xs font-semibold text-gray-700 mb-1">How Can We Help You?</label>
                             <textarea id="contactMsg" rows="3" placeholder="Tell us about your low pressure, leaks, or repiping questions..." class="w-full px-3.5 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-900 outline-none text-sm bg-white"></textarea>
                         </div>
+                        <!-- Web3Forms Spam Protection -->
+                           <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
                         <button type="submit" class="w-full bg-navy-900 hover:bg-navy-950 text-white font-bold py-3 rounded-lg shadow transition-colors text-sm">
                             Send Message
@@ -1240,7 +1244,8 @@
             goToStep(3);
         }
 
-        function handleLeadSubmit() {
+        // ✅ NEW: LEAD CAPTURE FORM (Calculator Step 4)
+        async function handleLeadSubmit() {
             const name = document.getElementById('leadName').value;
             const email = document.getElementById('leadEmail').value;
             const phone = document.getElementById('leadPhone').value;
@@ -1252,25 +1257,90 @@
             }
 
             const estimateText = document.getElementById('estimatedPriceOutput').innerText;
+            const material = document.getElementById('summaryMaterial').innerText;
+            const fixtures = document.getElementById('summaryFixtures').innerText;
+            const layout = document.getElementById('summaryLayout').innerText;
 
-            // Lead Capture Simulation Notice
-            alert(`Thank you, ${name}!\n\nYour repiping estimate of ${estimateText} has been locked in.\n\nA confirmation notification has been dispatched to repipingcost@gmail.com.\n\nOur certified local master plumber will reach out to schedule your free on-site verification.`);
+            const submitBtn = document.getElementById('submitLeadBtn');
+            const originalBtnHtml = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>SENDING...</span>';
+            submitBtn.disabled = true;
 
-            // Reset Form or Redirect
-            goToStep(1);
-            document.getElementById('repipeCalculatorForm').reset();
+            const formData = new FormData();
+            formData.append('access_key', '1869fcdf-6612-448d-a47a-9516c3a6430b');
+            formData.append('subject', 'New Repiping Quote Request');
+            formData.append('from_name', 'House Repiping Calculator');
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('address', address);
+            formData.append('Estimated Price', estimateText);
+            formData.append('Selected Material', material);
+            formData.append('Fixtures Count', fixtures);
+            formData.append('Property Layout', layout);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+                const result = await response.json();
+
+                if (result.success) {
+                    alert(`Thank you, ${name}!\n\nYour repiping estimate of ${estimateText} has been locked in and sent to our team.\n\nOur certified local master plumber will reach out to schedule your free on-site verification.`);
+                    document.getElementById('repipeCalculatorForm').reset();
+                    goToStep(1);
+                } else {
+                    alert('Oops! Something went wrong. Please try again later.');
+                }
+            } catch (error) {
+                alert('Network error. Please check your connection and try again.');
+            } finally {
+                submitBtn.innerHTML = originalBtnHtml;
+                submitBtn.disabled = false;
+            }
         }
 
-        function handleContactSubmit() {
+        // ✅ NEW: GENERAL CONTACT FORM
+        async function handleContactSubmit() {
             const name = document.getElementById('contactName').value;
             const email = document.getElementById('contactEmail').value;
+            const phone = document.getElementById('contactPhone').value;
+            const msg = document.getElementById('contactMsg').value;
 
             if (!name || !email) {
                 alert('Please provide your name and email address.');
                 return;
             }
 
-            alert(`Thank you ${name}, your message has been sent to repipingcost@gmail.com. Our team will contact you shortly!`);
+            const contactForm = document.querySelector('#contact form');
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnHtml = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData();
+            formData.append('access_key', 'bd8db380-a5dc-4c96-b817-918efe5546f1');
+            formData.append('subject', 'New Contact Form Inquiry');
+            formData.append('from_name', 'House Repiping Calculator');
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone || 'Not provided');
+            formData.append('message', msg || 'No message provided');
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+                const result = await response.json();
+
+                if (result.success) {
+                    alert(`Thank you ${name}, your message has been sent successfully! Our team will contact you shortly.`);
+                    contactForm.reset();
+                } else {
+                    alert('Oops! Something went wrong. Please try again later.');
+                }
+            } catch (error) {
+                alert('Network error. Please check your connection and try again.');
+            } finally {
+                submitBtn.innerHTML = originalBtnHtml;
+                submitBtn.disabled = false;
+            }
         }
     </script>
     <script type="application/ld+json">
